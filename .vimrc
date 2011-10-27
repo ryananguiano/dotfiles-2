@@ -168,6 +168,9 @@ nmap <leader>sw :syntax off<CR>:syntax on<CR>
 " strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+" change leading tabs to 4 spaces
+nnoremap <leader>T :%s/\t/    /<cr>:let @\=''<CR>
+
 " Easier linewise reselection
 map <leader>v V`]
 
