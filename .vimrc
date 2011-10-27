@@ -169,7 +169,14 @@ nmap <leader>sw :syntax off<CR>:syntax on<CR>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " change leading tabs to 4 spaces
-nnoremap <leader>T :%s/\t/    /<cr>:let @\=''<CR>
+nnoremap <leader>T :%s/\t/    /<cr>:let @/=''<CR>
+
+"next tab
+nnoremap <leader>x :tabn<cr>:let @/=''<CR>
+"prev tab
+nnoremap <leader>z :tabp<cr>:let @/=''<CR>
+
+nnoremap <leader>G 1G<cr>
 
 " Easier linewise reselection
 map <leader>v V`]
