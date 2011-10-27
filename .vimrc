@@ -176,7 +176,11 @@ nnoremap <leader>x :tabn<cr>:let @/=''<CR>
 "prev tab
 nnoremap <leader>z :tabp<cr>:let @/=''<CR>
 
-nnoremap <leader>G 1G<cr>
+"jump to first line of file
+nnoremap <leader>a 1G<cr>
+
+"short command for set relativenumber
+nnoremap <leader>rn :set relativenumber<cr>
 
 " Easier linewise reselection
 map <leader>v V`]
@@ -193,12 +197,6 @@ nnoremap <leader>b :VCSBlame<CR>
 
 " fold html tags
 au BufNewFile,BufRead *.html map <leader>ft Vatzf
-
-" stuff I've only found works properly in 7.3
-if version >= 703
-    " Ack
-    map <leader>a :Ack<space>
-endif
 
 
 " * Plugin Options
