@@ -127,8 +127,6 @@ function ccd () {
 
 alias spacedad='python ~/Documents/Programming/python_bits/twit_bot.py 1>>/dev/null&'
 
-xrdb -merge ~/.Xdefaults
-
 #print and execute the command at the specified line+1 of the bash history file
 #+1 because the numbers that `history` displays are apparently off by one
 function histr () {

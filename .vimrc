@@ -176,6 +176,9 @@ nnoremap <leader>x :tabn<cr>:let @/=''<CR>
 "prev tab
 nnoremap <leader>z :tabp<cr>:let @/=''<CR>
 
+"close tab
+nnoremap <leader>c :close<cr>
+
 "jump to first line of file
 nnoremap <leader>a 1G<cr>
 
