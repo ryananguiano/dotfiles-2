@@ -134,3 +134,5 @@ function histr () {
     echo $cmd
     $cmd
 }
+
+alias hay='find . -name'
