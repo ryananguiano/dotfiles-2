@@ -1,0 +1,6 @@
+*customization: -color
+XTerm*termName: xterm-256color
+XTerm*background: black
+XTerm*foreground: white
+XTerm*saveLines: 1024
+XTerm*font: -*-fixed-medium-r-*-*-24-*-*-*-*-*-iso8859-*
