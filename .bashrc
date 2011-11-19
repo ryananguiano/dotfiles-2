@@ -103,19 +103,32 @@ fi
 #USER-ADDED FUNCTIONS/ALIASES
 ##################################################
 
+alias cp='cp -i'
+alias rm='rm -i'
+alias mv='mv -i'
+alias ls='ls -al'
 alias hist="history | grep"
 alias xrestart="sudo /etc/init.d/gdm restart"
-alias ls='ls -al'
 alias mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
+alias backup="perl /Users/emmettbutler/Documents/Programming/perl/backup/backup.pl"
+alias mysql="/usr/local/mysql/bin/mysql"
+alias mysqladmin="/usr/local/mysql/bin/mysql"
+alias spacedad='python ~/Documents/Programming/python_bits/twit_bot.py 1>>/dev/null&'
+alias hay='find . -name'
 
 PATH=$PATH:"/home/emmett/Documents/Programming/add_to_path:/opt/flex/bin"
 
-export WEBROOT="/home/emmett/Documents/Programming/web/www"
+export WEBSERVER="/home/emmett/Documents/Programming/web/www"
 export WORKON_HOME="/home/emmett/virtualenvs"
 export GRAILS_HOME="/opt/grails"
 export COGROOT="/home/emmett/git/CT"
 export PATH=$PATH:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin
 export PGMROOT="/home/emmett/Documents/Programming"
+export RUBY=$PGMROOT/ruby
+export JAVA=$PGMROOT/java
+export C=$PGMROOT/c
+export PERL=$PGMROOT/perl
+export PYTHON=$PGMROOT/python
 
 function pycd () {
     echo `python -c "import os.path, $1; print os.path.dirname($1.__file__)"`;
@@ -125,8 +138,6 @@ function ccd () {
     pushd $COGROOT/$1;
 }
 
-alias spacedad='python ~/Documents/Programming/python_bits/twit_bot.py 1>>/dev/null&'
-
 #print and execute the command at the specified line+1 of the bash history file
 #+1 because the numbers that `history` displays are apparently off by one
 function histr () {
@@ -135,4 +146,3 @@ function histr () {
     $cmd
 }
 
-alias hay='find . -name'
