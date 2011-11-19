@@ -145,4 +145,3 @@ function histr () {
     echo $cmd
     $cmd
 }
-
