@@ -135,4 +135,6 @@ function histr () {
     $cmd
 }
 
+alias pconnect='ssh -L 27017:localhost:27017 cogtree@174.143.145.120'
 alias hay='find . -name'
+alias nes='mednafen'
