@@ -172,7 +172,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>T :%s/\t/    /<cr>:let @/=''<CR>
 
 "next tab
-nnoremap <leader>x :tabn<cr>
+nnoremap <Tab> :tabn<cr>
 "prev tab
 nnoremap <leader>z :tabp<cr>
 
