@@ -104,7 +104,7 @@ alias mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
 alias backup="perl /Users/emmettbutler/Documents/Programming/perl/backup/backup.pl"
 alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin="/usr/local/mysql/bin/mysql"
-alias spacedad='python ~/Documents/Programming/python_bits/twit_bot.py 1>>/dev/null&'
+alias spacedad='nohup python ~/Documents/Programming/python_bits/twit_bot.py 1>>/dev/null&'
 alias hay='find . -name'
 
 PATH=$PATH:"/home/emmett/Documents/Programming/add_to_path:/opt/flex/bin"
