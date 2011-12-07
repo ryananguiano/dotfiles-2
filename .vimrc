@@ -179,9 +179,6 @@ nnoremap <leader>z :tabp<cr>
 "close tab
 nnoremap <leader>c :close<cr>
 
-"jump to first line of file
-nnoremap <leader>a 1G<cr>
-
 "short command for set relativenumber
 nnoremap <leader>rn :set relativenumber<cr>
 
