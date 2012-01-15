@@ -111,9 +111,9 @@ alias hay='find . -name'
 PATH=$PATH:"/home/emmett/Documents/Programming/add_to_path:/opt/flex/bin"
 
 export WEBSERVER="/home/emmett/Documents/Programming/web/www"
-export WORKON_HOME="/home/emmett/virtualenvs"
+export WORKON_HOME="/Users/emmettbutler/.virtualenvs"
 export GRAILS_HOME="/opt/grails"
-export COGROOT="/home/emmett/git/CT"
+export COGROOT="/Users/emmettbutler/git/CT"
 export PATH=$PATH:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin
 export PGMROOT="/home/emmett/Documents/Programming"
 export RUBY=$PGMROOT/ruby
@@ -121,6 +121,7 @@ export JAVA=$PGMROOT/java
 export C=$PGMROOT/c
 export PERL=$PGMROOT/perl
 export PYTHON=$PGMROOT/python
+export IOS=$PGMROOT/iOS
 
 function pycd () {
     echo `python -c "import os.path, $1; print os.path.dirname($1.__file__)"`;
@@ -145,3 +146,12 @@ alias nes='mednafen'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+##
+# Your previous /Users/emmettbutler/.bash_profile file was backed up as /Users/emmettbutler/.bash_profile.macports-saved_2011-12-09_at_10:40:24
+##
+
+# MacPorts Installer addition on 2011-12-09_at_10:40:24: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
