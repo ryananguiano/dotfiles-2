@@ -93,6 +93,7 @@ fi
 ##################################################
 #USER-ADDED FUNCTIONS/ALIASES
 ##################################################
+export EDITOR=vim
 
 alias cp='cp -i'
 alias rm='rm -i'

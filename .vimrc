@@ -10,6 +10,8 @@ set expandtab           "soft tabs
 set showcmd " show partially-typed commands in the status bar
 set ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) "ruler on steroids
+set nocompatible
+set modelines=0
 
 
 " * Tab-related
@@ -70,6 +72,7 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set laststatus=2        "always show status line
+set undofile            "create a file containing undo changes
 
 
 " * Leader
@@ -80,6 +83,7 @@ set history=1000                   " keeps a thousand lines of history
 set magic                          " allows pattern matching with special characters
 set backspace=2                    " make backspace work like normal
 set visualbell                     " visual bell instead of annoying beeping
+set cursorline                     " hightlight line cursor
 set mouse=a                        " enable full mouse support in the console
 set virtualedit=onemore            " allow for cursor beyond last character
 " * Search & Replace
