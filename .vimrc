@@ -1,3 +1,4 @@
+:colorscheme elflord
 " Tabs
 set number              "line numbering
 set list                "show tabs and newlines
@@ -93,7 +94,8 @@ set incsearch                      " show the `best match so far' as search stri
 set gdefault                       " assume the /g flag on :s substitutions
 set hlsearch                       " highlight search items
 
-set wrap linebreak textwidth=0     " set vim to soft wrap lines
+set wrap linebreak textwidth=79     " set vim to soft wrap lines
+set colorcolumn=85
 set formatoptions=qrn1
 set autoindent
 set shiftround
@@ -126,7 +128,21 @@ else
     colorscheme molokai
 endif
 
+"save on window unfocus
+au FocusLost * :wa
+
 " * Key Remaps
+nnoremap / /\v
+vnoremap / /\v
+
+"ctrl swtiches between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+",w to open new split window
+nnoremap <leader>w <C-w>v<C-w>l
 
 " use <F6> to cycle through split windows (and <Shift>+<F6> to cycle backwards
 nnoremap <F6> <C-W>w
@@ -163,6 +179,21 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap ; :
 
+"jj to enter normal mode
+inoremap jj <ESC>
+
+"disable arrow keys and learn some proper navigation
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
 " bind current to scroll
 nnoremap <leader>s :set scb!<CR>
 
@@ -176,9 +207,12 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>T :%s/\t/    /<cr>:let @/=''<CR>
 
 "next tab
-nnoremap <Tab> :tabn<cr>
+nnoremap <leader>x :tabn<cr>
 "prev tab
 nnoremap <leader>z :tabp<cr>
+
+nnoremap <tab> %
+vnoremap <tab> %
 
 "close tab
 nnoremap <leader>c :close<cr>
@@ -198,6 +232,9 @@ nnoremap <leader>long :HighlightLongLines<CR>
 
 " find out who's to blame for the current line
 nnoremap <leader>b :VCSBlame<CR>
+
+"sort CSS properties
+nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
 " fold html tags
 au BufNewFile,BufRead *.html map <leader>ft Vatzf
