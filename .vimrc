@@ -1,4 +1,7 @@
-:colorscheme elflord
+:colorscheme molokai
+
+call pathogen#infect()
+
 " Tabs
 set number              "line numbering
 set list                "show tabs and newlines
@@ -164,7 +167,7 @@ nnoremap <leader>l :set list!<cr>
 nmap <leader>p pi
 
 " edit vim config
-nmap <leader>V :tabedit $MYVIMRC<CR>
+nmap <leader>V :vsp $MYVIMRC<CR>
 
 " page down with <Space> (like in `Lynx', `Mutt', `Pine', `Netscape Navigator',
 " `SLRN', `Less', and `More'); page up with - (like in `Lynx', `Mutt', `Pine'),
@@ -495,3 +498,4 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+"autocmd BufWritePost *.py call Flake8()

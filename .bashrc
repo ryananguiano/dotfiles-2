@@ -111,7 +111,7 @@ alias hay='find . -name'
 PATH=$PATH:"/home/emmett/Documents/Programming/add_to_path:/opt/flex/bin"
 
 export WEBSERVER="/home/emmett/Documents/Programming/web/www"
-export WORKON_HOME="/home/emmett/virtualenvs"
+export WORKON_HOME="/Users/emmettbutler/virtualenvs"
 export GRAILS_HOME="/opt/grails"
 export COGROOT="/home/emmett/git/CT"
 export PATH=$PATH:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin
@@ -157,3 +157,4 @@ fi
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+source /usr/local/bin/virtualenvwrapper.sh
