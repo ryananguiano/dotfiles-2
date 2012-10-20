@@ -146,6 +146,7 @@ nnoremap <C-l> <C-w>l
 
 ",w to open new split window
 nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>e <C-w>s<C-w>l
 
 " use <F6> to cycle through split windows (and <Shift>+<F6> to cycle backwards
 nnoremap <F6> <C-W>w
