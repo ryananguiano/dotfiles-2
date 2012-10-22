@@ -240,6 +240,12 @@ nnoremap <leader>b :VCSBlame<CR>
 "sort CSS properties
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
+" autocomplete brackets
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
 " fold html tags
 au BufNewFile,BufRead *.html map <leader>ft Vatzf
 
