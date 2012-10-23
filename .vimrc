@@ -2,6 +2,11 @@
 
 call pathogen#infect()
 
+" syntax setups
+au BufNewFile,BufRead *.as set filetype=actionscript
+au BufNewFile,BufRead *.m set filetype=objc_enhanced
+au BufNewFile,BufRead *.mm set filetype=objc_enhanced
+
 " Tabs
 set number              "line numbering
 set list                "show tabs and newlines
@@ -240,7 +245,7 @@ nnoremap <leader>b :VCSBlame<CR>
 "sort CSS properties
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
-" autocomplete brackets
+" close brackets automatically
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
