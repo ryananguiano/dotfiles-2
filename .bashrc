@@ -109,6 +109,7 @@ alias spacedad='nohup python ~/Documents/Programming/python_bits/twit_bot.py 1>>
 alias hay='find . -name'
 
 PATH=$PATH:"/home/emmett/Documents/Programming/add_to_path:/opt/flex/bin"
+PATH=$PATH:/usr/local/Cellar/node/HEAD/bin # Add NPM binaries
 
 export WEBSERVER="/home/emmett/Documents/Programming/web/www"
 export WORKON_HOME="/Users/emmettbutler/virtualenvs"
@@ -158,3 +159,10 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 source /usr/local/bin/virtualenvwrapper.sh
+
+# Setting PATH for EPD_free-7.3-2
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+export PATH
+
+source ~/git/liquidprompt/liquidprompt

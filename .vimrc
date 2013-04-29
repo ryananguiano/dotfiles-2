@@ -269,6 +269,9 @@ let g:LustyExplorerSuppressRubyWarning = 1
 " NERDTree
 let g:NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
 
+" disable life folding in markdown files
+let g:vim_markdown_folding_disabled=1
+
 " * Text Formatting
 
 " get rid of the default style of C comments, and define a style with two stars
