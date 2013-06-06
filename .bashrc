@@ -98,7 +98,8 @@ export EDITOR=vim
 alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'
-alias ls='ls -al'
+alias ls='ls -al --color=auto'
+alias grep='grep -n --color'
 alias hist="history | grep"
 alias xrestart="sudo /etc/init.d/gdm restart"
 alias mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
