@@ -158,3 +158,6 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 source /usr/local/bin/virtualenvwrapper.sh
+# don't check cacert
+export GIT_SSL_NO_VERIFY=true
+export M2_HOME=/usr/local/apache-maven/apache-maven-3.0.5
