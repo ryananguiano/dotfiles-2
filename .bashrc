@@ -166,3 +166,7 @@ PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 export PATH
 
 source ~/git/liquidprompt/liquidprompt
+
+DYLD_FALLBACK_LIBRARY_PATH=/usr/X11/lib
+export DYLD_FALLBACK_LIBRARY_PATH
+export DYLD_FALLBACK_LIBRARY_PATH="${HOME}/wine/wine-X.Y.Z/lib:/usr/X11/lib:/usr/lib"}

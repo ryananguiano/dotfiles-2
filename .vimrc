@@ -6,6 +6,7 @@ call pathogen#infect()
 au BufNewFile,BufRead *.as set filetype=actionscript
 au BufNewFile,BufRead *.m set filetype=objc_enhanced
 au BufNewFile,BufRead *.mm set filetype=objc_enhanced
+au BufNewFile,BufRead *.md set ft=md
 
 " Tabs
 set number              "line numbering
@@ -290,6 +291,9 @@ set comments+=b:\"
 " recognize anything at all with a .txt extension as being human-language text
 augroup filetype
   autocmd BufNewFile,BufRead *.txt set filetype=human
+augroup END
+augroup filetype
+  autocmd BufNewFile,BufRead *.md set filetype=human
 augroup END
 " in human-language files, automatically format everything at 72 chars:
 autocmd FileType mail,human,markdown set formatoptions+=t textwidth=78
