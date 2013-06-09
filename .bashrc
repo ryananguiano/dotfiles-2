@@ -170,3 +170,8 @@ source ~/git/liquidprompt/liquidprompt
 DYLD_FALLBACK_LIBRARY_PATH=/usr/X11/lib
 export DYLD_FALLBACK_LIBRARY_PATH
 export DYLD_FALLBACK_LIBRARY_PATH="${HOME}/wine/wine-X.Y.Z/lib:/usr/X11/lib:/usr/lib"}
+# don't check cacert
+export GIT_SSL_NO_VERIFY=true
+export M2_HOME=/usr/local/apache-maven/apache-maven-3.0.5
+export M2=/usr/local/apache-maven/apache-maven-3.0.5/bin
+export PATH=/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin:/opt/flex/bin
