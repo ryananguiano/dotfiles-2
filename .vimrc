@@ -320,6 +320,9 @@ autocmd FileType php let php_noShortTags = 1
 " highlight functions from the base library
 autocmd FileType php let php_baselib = 1
 
+" Automatic PHP syntax check
+autocmd FileType php nmap <leader>pc :!php -l %<cr>
+
 " open PHP classes but not functions
 autocmd FileType php set foldlevel=1
 
