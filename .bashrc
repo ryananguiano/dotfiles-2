@@ -164,3 +164,8 @@ export GIT_SSL_NO_VERIFY=true
 export M2_HOME=/usr/local/apache-maven/apache-maven-3.0.5
 export M2=/usr/local/apache-maven/apache-maven-3.0.5/bin
 export PATH=/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin:/opt/flex/bin
+source ~/liquidprompt/liquidprompt
+
+alias minify="./build_scripts/assets/compile_manifest.py --csso-path $CSSO_PATH --closure-path $CLOSURE_PATH"
+export CSSO_PATH="/usr/local/bin/csso"
+export CLOSURE_PATH="/home/emmett/.npm/closure-compiler/0.2.2/package/lib/vendor/compiler.jar"

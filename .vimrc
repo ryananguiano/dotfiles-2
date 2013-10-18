@@ -1,91 +1,40 @@
 :colorscheme molokai
 
-call pathogen#infect()
+filetype plugin indent on
 
-" syntax setups
-au BufNewFile,BufRead *.as set filetype=actionscript
-au BufNewFile,BufRead *.m set filetype=objc_enhanced
-au BufNewFile,BufRead *.mm set filetype=objc_enhanced
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"       SETTINGS OF ALL SORTES
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" * Leader
+let mapleader = ","
+
+" Why even have a GUI?
+set guioptions=
 
 " Tabs
-set number              "line numbering
+if version >= 703
+    set relativenumber             " shows line numbers relative to current line
+else
+    set number
+endif
 set list                "show tabs and newlines
 set tabstop=4           "set tab to 4 spaces
 set softtabstop=4       "set soft tab to 4 spaces
 set shiftwidth=4
 set expandtab           "soft tabs
+set background=dark
+colorscheme molokai
 
 " Basics
-set showcmd " show partially-typed commands in the status bar
 set ruler
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) "ruler on steroids
 set nocompatible
 set modelines=0
-
-
-" * Tab-related
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab
-
-" * Basics
 syntax on                          " syntax highlighting is nifty! let's turn it on!
 set showmode                       " display the current mode in the status line
 set showcmd                        " show partially-typed commands in the status line
-set ruler                          " add a useful ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set hidden
-
-" Statusline Hijinx
-set statusline=%f       "tail of the filename
-
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
-
-"display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-set statusline+=%h      "help file flag
-set statusline+=%y      "filetype
-set statusline+=%r      "read only flag
-set statusline+=%m      "modified flag
-
-" fugitive statusline
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
-
-"display a warning if &et is wrong, or we have mixed-indenting
-set statusline+=%#error#
-set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
-
-set statusline+=%{StatuslineTrailingSpaceWarning()}
-
-set statusline+=%{StatuslineLongLineWarning()}
-
-set statusline+=%#warningmsg#
-set statusline+=%*
-
-"display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
-
-set statusline+=%=      "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
-set laststatus=2        "always show status line
 set undofile            "create a file containing undo changes
-
-
-" * Leader
-let mapleader = ","
 
 " * General Options
 set history=1000                   " keeps a thousand lines of history
@@ -108,11 +57,6 @@ set formatoptions=qrn1
 set autoindent
 set shiftround
 
-if version >= 703
-    set relativenumber             " shows line numbers relative to current line
-else
-    set number
-endif
 set wildmenu                       " enables a menu at the bottom of the vim/gvim window
 set wildmode=longest,list          " complete on tab to longest match, present match list on second tab
 set ttyfast                        " enable support for higher speed terminal connections
@@ -125,131 +69,152 @@ set whichwrap=h,l,~,[,]       " have the h and l cursor keys wrap between
                               " lines (like <Space> and <BkSpc> do by default),
                               " and ~ convert case over line breaks;
                               " also have the cursor keys wrap in insert mode
-
 " invisible characters to show
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+" get rid of the default style of C comments, and define a style with two stars
+" at the start of `middle' rows which (looks nicer and) avoids asterisks used
+" for bullet lists being treated like C comments; then define a bullet list
+" style for single stars (like already is for hyphens):
+set comments-=s1:/*,mb:*,ex:*/
+set comments+=s:/*,mb:\ *,ex:*/
+set comments+=fb:\ *
+" treat lines starting with a quote mark as comments (for 'Vim' files)
+set comments+=b:\"
+" OmniCompletion for std lib functions and so forth (C-X, C-o)
+set omnifunc=syntaxcomplete#Complete
 
-set background=dark
-if &t_Co < 88
-    colorscheme candycode
-else
-    colorscheme molokai
-endif
+" Statusline Hijinx
+set statusline=%f       "tail of the filename
+"display a warning if fileformat isnt unix
+set statusline+=%#warningmsg#
+set statusline+=%{&ff!='unix'?'['.&ff.']':''}
+set statusline+=%*
+"display a warning if file encoding isnt utf-8
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
+set statusline+=%h      "help file flag
+set statusline+=%y      "filetype
+set statusline+=%r      "read only flag
+set statusline+=%m      "modified flag
+" fugitive statusline
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
+"display a warning if &et is wrong, or we have mixed-indenting
+set statusline+=%#error#
+set statusline+=%{StatuslineTabWarning()}
+set statusline+=%*
+set statusline+=%{StatuslineTrailingSpaceWarning()}
+set statusline+=%{StatuslineLongLineWarning()}
+set statusline+=%#warningmsg#
+set statusline+=%*
+"display a warning if &paste is set
+set statusline+=%#error#
+set statusline+=%{&paste?'[paste]':''}
+set statusline+=%*
+set statusline+=%=      "left/right separator
+set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+set laststatus=2        "always show status line
 
-"save on window unfocus
-au FocusLost * :wa
-
-" * Key Remaps
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"       KEYMAPPINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" turn on 'very magic' mode (full regex support when searching)
 nnoremap / /\v
 vnoremap / /\v
-
 "ctrl swtiches between splits
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-",w to open new split window
+",w to open new vertical split window
+",e to open new horizontal split window
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>e <C-w>s<C-w>l
-
 " use <F6> to cycle through split windows (and <Shift>+<F6> to cycle backwards
 nnoremap <F6> <C-W>w
 nnoremap <S-F6> <C-W>W
-
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
-
-" Sudo to write
+" Sudo to write (for those pesky 'write-protected files')
 cmap w!! w !sudo tee % >/dev/null
-
 " unhighilight search items with ,<space>
 nnoremap <leader><space> :noh<cr>
-
 " toggle invisible characters
 nnoremap <leader>l :set list!<cr>
-
 " enter insert mode after paste
 nmap <leader>p pi
-
-" edit vim config
-nmap <leader>V :vsp $MYVIMRC<CR>
-
-" page down with <Space> (like in `Lynx', `Mutt', `Pine', `Netscape Navigator',
-" `SLRN', `Less', and `More'); page up with - (like in `Lynx', `Mutt', `Pine'),
-" or <BkSpc> (like in `Netscape Navigator'):
-" NOTE: enabling this may make the space.vim plugin wonky
+" edit vim config in a new tab
+nmap <leader>V :tabnew $MYVIMRC<CR>
+" page down with <Space>, page up with backspace
 noremap <Space> <PageDown>
 noremap <BS> <PageUp>
-
-" Fuck you, help key.
+" disable help key.
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+" save about 500 keypresses/day (shift key)
 nnoremap ; :
-
-"jj to enter normal mode
-inoremap jj <ESC>
-
-"disable arrow keys and learn some proper navigation
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" disable arrows (saves right hand from moving to and from arrows)
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
 nnoremap j gj
 nnoremap k gk
-
+"jj to enter normal mode (saves left hand from moving from home row to ESC and back)
+inoremap jj <ESC>
 " bind current to scroll
 nnoremap <leader>s :set scb!<CR>
-
-" flip syntax on and off
-nmap <leader>sw :syntax off<CR>:syntax on<CR>
-
-" strip trailing whitespace
+" strip trailing whitespace from entire file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-
-" change leading tabs to 4 spaces
+" change all leading tabs to 4 spaces
 nnoremap <leader>T :%s/\t/    /<cr>:let @/=''<CR>
-
-"next tab
+"next/prev tabs
 nnoremap <C-tab> :tabn<cr>
-"prev tab
 nnoremap <S-C-tab> :tabp<cr>
-
+" jump to matching brackets with tab
 nnoremap <tab> %
 vnoremap <tab> %
-
 "close tab
 nnoremap <leader>c :close<cr>
-
-"short command for set relativenumber
-nnoremap <leader>rn :set relativenumber<cr>
-
+"toggle relative numbering
+nnoremap <leader>rn :set relativenumber!<cr>
 " Easier linewise reselection
 map <leader>v V`]
-
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
 nnoremap <silent> <leader>y :YRShow<cr>
-
 " highlight long lines in file
 nnoremap <leader>long :HighlightLongLines<CR>
-
-" find out who's to blame for the current line
-nnoremap <leader>b :VCSBlame<CR>
-
 "sort CSS properties
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
-
-" close brackets automatically
+" close all sorts of brackets automatically
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+inoremap [      []<Left>
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap [[     [
+inoremap []     []
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"           AUTO COMMANDS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"save on window unfocus - never hit :wa again!
+au FocusLost * :wa
+
+" special syntaxes
+au BufNewFile,BufRead *.as set filetype=actionscript
+au BufNewFile,BufRead *.m set filetype=objc_enhanced
+au BufNewFile,BufRead *.mm set filetype=objc_enhanced
 
 inoremap [      []<Left>
 inoremap [<CR>  [<CR>]<Esc>O
@@ -264,36 +229,15 @@ inoremap ()     ()
 " fold html tags
 au BufNewFile,BufRead *.html map <leader>ft Vatzf
 
-
-" * Plugin Options
-
-" disable PIV's PHP autofolding
-"let g:DisableAutoPHPFolding = 1
-
-" wtf LustyExplorer, most annoying warning EVER
-let g:LustyExplorerSuppressRubyWarning = 1
-
-" fix bundled directory for stylesheets
-"let g:MarkdownPreviewDefaultStyles = $HOME.'/.vim/bundle/markdown-preview/stylesheets/'
-
-" NERDTree
-let g:NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
-
-" * Text Formatting
-
-" get rid of the default style of C comments, and define a style with two stars
-" at the start of `middle' rows which (looks nicer and) avoids asterisks used
-" for bullet lists being treated like C comments; then define a bullet list
-" style for single stars (like already is for hyphens):
-set comments-=s1:/*,mb:*,ex:*/
-set comments+=s:/*,mb:\ *,ex:*/
-set comments+=fb:\ *
-" treat lines starting with a quote mark as comments (for 'Vim' files)
-set comments+=b:\"
-
+"highlight trailing whitespace - Thanks @kbourgoin!
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " * Text Formatting -- Specific File Formats
-
 " recognize anything at all with a .txt extension as being human-language text
 augroup filetype
   autocmd BufNewFile,BufRead *.txt set filetype=human
@@ -313,11 +257,6 @@ autocmd FileType perl set smartindent
 " (despite the mappings later):
 autocmd FileType make set noexpandtab shiftwidth=8
 
-" recognize smarty files, add dictionary completion
-au BufRead,BufNewFile *.tpl set filetype=smarty
-au Filetype smarty exec('set dictionary=$HOME/.vim/syntax/smarty.vim')
-au Filetype smarty set complete+=k
-
 " ** PHP Specific
 " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
 autocmd FileType php let php_sql_query = 1
@@ -336,11 +275,18 @@ autocmd FileType php nmap <leader>pc :!php -l %<cr>
 " open PHP classes but not functions
 autocmd FileType php set foldlevel=1
 
-" OmniCompletion for std lib functions and so forth (C-X, C-o)
-set omnifunc=syntaxcomplete#Complete
+" automatically start fullscreen on systems with wmctrl
+autocmd VimEnter * call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
-" * Functions
+"recalculate the trailing whitespace warning when idle, and after saving
+autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
+"recalculate the tab warning flag when idle and after writing
+autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"           YE OLDE FUNCTIONS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "define :HighlightLongLines command to highlight the offending parts of
 "lines that are longer than the specified length (defaulting to 80)
 command! -nargs=? HighlightLongLines call s:HighlightLongLines('<args>')
@@ -352,9 +298,6 @@ function! s:HighlightLongLines(width)
         echomsg "Usage: HighlightLongLines [natural number]"
     endif
 endfunction
-
-"recalculate the trailing whitespace warning when idle, and after saving
-autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
 
 "return '[\s]' if trailing white space is detected
 "return '' otherwise
@@ -375,7 +318,6 @@ function! StatuslineTrailingSpaceWarning()
     return b:statusline_trailing_space_warning
 endfunction
 
-
 "return the syntax highlight group under the cursor ''
 function! StatuslineCurrentHighlight()
     let name = synIDattr(synID(line('.'),col('.'),1),'name')
@@ -385,9 +327,6 @@ function! StatuslineCurrentHighlight()
         return '[' . name . ']'
     endif
 endfunction
-
-"recalculate the tab warning flag when idle and after writing
-autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 
 "return '[&et]' if &et is set wrong
 "return '[mixed-indenting]' if spaces and tabs are used to indent
@@ -478,31 +417,6 @@ function! s:Median(nums)
     endif
 endfunction
 
-" close the NERDTree window if there are no other open buffers
-function! NERDTreeQuit()
-  redir => buffersoutput
-  silent buffers
-  redir END
-"                     1BufNo  2Mods.     3File           4LineNo
-  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
-  let windowfound = 0
-
-  for bline in split(buffersoutput, "\n")
-    let m = matchlist(bline, pattern)
-
-    if (len(m) > 0)
-      if (m[2] =~ '..a..')
-        let windowfound = 1
-      endif
-    endif
-  endfor
-
-  if (!windowfound)
-    quitall
-  endif
-endfunction
-"autocmd WinEnter * call NERDTreeQuit()
-
 " toggle quickfix window
 command -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
@@ -515,12 +429,3 @@ function! QFixToggle(forced)
   endif
 endfunction
 nmap <silent> \ :QFix<CR>
-
-"highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-"autocmd BufWritePost *.py call Flake8()
