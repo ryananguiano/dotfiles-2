@@ -102,13 +102,12 @@ alias ls='ls -al'
 alias hist="history | grep"
 alias xrestart="sudo /etc/init.d/gdm restart"
 alias mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
-alias backup="perl /Users/emmettbutler/Documents/Programming/perl/backup/backup.pl"
 alias mysql="/usr/local/mysql/bin/mysql"
 alias mysqladmin="/usr/local/mysql/bin/mysql"
 alias spacedad='nohup python ~/Documents/Programming/python_bits/twit_bot.py 1>>/dev/null&'
 alias hay='find . -name'
 
-PATH=$PATH:"/home/emmett/Documents/Programming/add_to_path:/opt/flex/bin"
+PATH=$PATH:"/opt/flex/bin"
 PATH=$PATH:/usr/local/Cellar/node/HEAD/bin # Add NPM binaries
 
 export WEBSERVER="/home/emmett/Documents/Programming/web/www"
@@ -177,3 +176,6 @@ export M2=/usr/local/apache-maven/apache-maven-3.0.5/bin
 export PATH=/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/local/apache-maven/apache-maven-3.0.5/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin:/opt/flex/bin
 
 export PYTHONPATH=/Library/Python/2.7/site-packages
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
