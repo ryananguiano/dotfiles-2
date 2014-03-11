@@ -205,6 +205,10 @@ inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     (
 inoremap ()     ()
 
+" switch these since I learned them backwards
+nnoremap # *
+nnoremap * #
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "           AUTO COMMANDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
