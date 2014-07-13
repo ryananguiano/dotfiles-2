@@ -1,5 +1,0 @@
-*customization: -color
-XTerm*termName: xterm-256color
-XTerm*background: black
-XTerm*foreground: white
-XTerm*saveLines: 1024
