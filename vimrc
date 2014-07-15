@@ -166,6 +166,7 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 " save about 500 keypresses/day (shift key)
+" this messes with the actuql ; command (repeat last f/F command - is there a better way?)
 nnoremap ; :
 " disable arrows (saves right hand from moving to and from arrows)
 noremap <Up> <nop>
