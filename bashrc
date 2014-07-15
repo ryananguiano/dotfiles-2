@@ -107,7 +107,7 @@ alias mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
 alias hay='find . -name'
 alias fanstat='sudo cat /proc/acpi/ibm/fan'
 
-export WORKON_HOME="~/virtualenvs"
+export WORKON_HOME="/home/emmett/virtualenvs"
 export GRAILS_HOME="/opt/grails"
 
 # path modifications
