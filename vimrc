@@ -57,7 +57,7 @@ set incsearch                      " show the `best match so far' as search stri
 set gdefault                       " assume the /g flag on :s substitutions
 set hlsearch                       " highlight search items
 
-set wrap linebreak textwidth=9999     " set vim to soft wrap lines
+set wrap linebreak textwidth=9999  " set vim to soft wrap lines
 set colorcolumn=80
 set formatoptions=qrn1
 set autoindent
@@ -124,6 +124,8 @@ set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set laststatus=2        "always show status line
 
+set path+=./**          "set path to the cwd and all child dirs
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "       KEYMAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -173,6 +175,7 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+" j and k operate on visual lines by default
 nnoremap j gj
 nnoremap k gk
 "jj to enter normal mode (saves left hand from moving from home row to ESC and back)
