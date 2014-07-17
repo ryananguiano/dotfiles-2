@@ -189,9 +189,6 @@ nnoremap <leader>T :%s/\t/    /<cr>:let @/=''<CR>
 "next/prev tabs
 nnoremap <C-tab> :tabn<cr>
 nnoremap <S-C-tab> :tabp<cr>
-" jump to matching brackets with tab
-nnoremap <tab> %
-vnoremap <tab> %
 "close tab
 nnoremap <leader>c :close<cr>
 "toggle relative numbering
