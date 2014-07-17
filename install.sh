@@ -9,13 +9,7 @@ ln -s ~/git/dotfiles/bashrc ~/.bashrc
 ln -s ~/git/dotfiles/vimrc ~/.vimrc
 ln -s ~/git/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/git/dotfiles/opt ~/opt
-
-rm -rf ~/.vim
-mkdir ~/.vim
-mkdir ~/.vim/colors
-
-cp molokai.vim ~/.vim/colors
-cp candycode.vim ~/.vim/colors
+ln -s ~/git/dotfiles/vim ~/.vim
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 curl -Sso ~/.vim/autoload/pathogen.vim \
