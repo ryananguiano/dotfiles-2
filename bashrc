@@ -114,7 +114,8 @@ export GRAILS_HOME="/opt/grails"
 export PATH=$PATH:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin:/opt/flex/bin
 export PATH=$PATH:/home/emmett/tools/storm-0.8.2/bin
 export PATH=$PATH:/home/emmett/tools/apache-maven-3.2.1/bin
-export PATH=$PATH:/home/emmett/opt/bin
+export PATH=$PATH:/home/emmett/opt/bin:/opt/bin
+export PATH=$PATH:/opt/llvm/build/Release+Asserts/bin
 export PATH=$PATH:/opt/llvm/build/Release+Asserts/bin
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/emmett/anaconda3/lib
