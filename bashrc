@@ -109,6 +109,7 @@ alias fanstat='sudo cat /proc/acpi/ibm/fan'
 
 export WORKON_HOME="/home/emmett/virtualenvs"
 export GRAILS_HOME="/opt/grails"
+export PYTHONSTARTUP="~/.pythonstartup"
 
 # path modifications
 export PATH=$PATH:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin:/opt/flex/bin

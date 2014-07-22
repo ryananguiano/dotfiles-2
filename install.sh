@@ -3,6 +3,7 @@
 rm ~/.bashrc
 rm ~/.vimrc
 rm ~/.tmux.conf
+rm ~/.pythonstartup
 rm ~/opt
 
 ln -s ~/git/dotfiles/bashrc ~/.bashrc
@@ -10,6 +11,7 @@ ln -s ~/git/dotfiles/vimrc ~/.vimrc
 ln -s ~/git/dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/git/dotfiles/opt ~/opt
 ln -s ~/git/dotfiles/vim ~/.vim
+ln -s ~/git/dotfiles/pythonstartup ~/.pythonstartup
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 curl -Sso ~/.vim/autoload/pathogen.vim \
