@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/emmett/git/parsely/dash/apps/analytics/views'
-let g:netrw_dirhist_2='/home/emmett/git/parsely/svc/mobileproxy'
-let g:netrw_dirhist_3='/home/emmett/git/parsely'
-let g:netrw_dirhist_4='/home/emmett/git/compilers/tests/functions'
-let g:netrw_dirhist_5='/home/emmett'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/emmett/git/parsely/ptrack/streamparse/topologies'
+let g:netrw_dirhist_2='/home/emmett/virtualenvs/ct-crawl/lib/python2.7/site-packages/scrapy/contrib'
+let g:netrw_dirhist_3='/home/emmett/virtualenvs/ct-crawl/lib/python2.7/site-packages/scrapy/contrib/pipeline'
+let g:netrw_dirhist_4='/home/emmett/git/dotfiles/vim/bundle/vim-flake8'
+let g:netrw_dirhist_5='/home/emmett/git/dotfiles/vim/bundle'
+let g:netrw_dirhist_6='/home/emmett/git/dotfiles/vim/bundle/vim-flake8'
+let g:netrw_dirhist_7='/home/emmett/git/dotfiles/vim/bundle/ns9tks-vim-l9-3bb534a720fa'
+let g:netrw_dirhist_8='/home/emmett/git/dotfiles/vim'
