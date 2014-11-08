@@ -98,9 +98,10 @@ export EDITOR=vim
 alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'
-alias ls='ls -al --color=auto'
+alias ls='ls -al'
 alias grep='grep -n --color'
 alias hist="history | grep"
+alias clj="java -cp /usr/local/bin/clojure-1.6.0/clojure-1.6.0.jar clojure.main"
 
 alias xrestart="sudo /etc/init.d/gdm restart"
 alias mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
@@ -116,6 +117,7 @@ export PATH=$PATH:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin:/op
 export PATH=$PATH:/home/emmett/tools/storm-0.8.2/bin
 export PATH=$PATH:/home/emmett/tools/apache-maven-3.2.1/bin
 export PATH=$PATH:/home/emmett/opt/bin:/opt/bin
+export PATH=$PATH:~/opt/bin
 export PATH=$PATH:/opt/llvm/build/Release+Asserts/bin
 export PATH=$PATH:/opt/llvm/build/Release+Asserts/bin
 
