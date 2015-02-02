@@ -104,7 +104,7 @@ alias hist="history | grep"
 alias clj="java -cp /usr/local/bin/clojure-1.6.0/clojure-1.6.0.jar clojure.main"
 
 alias xrestart="sudo /etc/init.d/gdm restart"
-alias mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
+alias Mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
 alias hay='find . -name'
 alias fanstat='sudo cat /proc/acpi/ibm/fan'
 
@@ -115,18 +115,17 @@ export PYTHONSTARTUP="~/.pythonstartup"
 # path modifications
 export PATH=$PATH:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin:/opt/flex/bin
 export PATH=$PATH:/home/emmett/tools/storm-0.8.2/bin
+export PATH=$PATH:/sbin
 export PATH=$PATH:/home/emmett/tools/apache-maven-3.2.1/bin
 export PATH=$PATH:/home/emmett/opt/bin:/opt/bin
 export PATH=$PATH:~/opt/bin
 export PATH=$PATH:/opt/llvm/build/Release+Asserts/bin
 export PATH=$PATH:/opt/llvm/build/Release+Asserts/bin
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/emmett/anaconda3/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/home/emmett/anaconda3/lib
 
 export JAVA_HOME="/usr/lib/jvm/default-java/"
 export M2_HOME="/home/emmett/tools/apache-maven-3.2.1"
-
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 $PS1="\[\033[G\]$PS1"
 
