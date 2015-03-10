@@ -19,3 +19,6 @@ curl -Sso ~/.vim/autoload/pathogen.vim \
 
 cd
 git clone https://github.com/nojhan/liquidprompt.git
+
+# wmctrl for fullscreen gvim
+sudo apt-get install wmctrl
