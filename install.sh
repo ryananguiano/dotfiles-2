@@ -20,5 +20,11 @@ curl -Sso ~/.vim/autoload/pathogen.vim \
 cd
 git clone https://github.com/nojhan/liquidprompt.git
 
-# wmctrl for fullscreen gvim
-sudo apt-get install wmctrl
+curl -Sso get-pip.py https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+
+# for vim-flake8
+sudo pip install flake8
+
+# install a bunch of standard stuff
+sudo apt-get install tmux ipython vim-gnome git build-essential wmctrl
