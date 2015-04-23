@@ -228,6 +228,7 @@ au FocusLost * :wa
 
 " special syntaxes
 au BufNewFile,BufRead *.as set filetype=actionscript
+au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.less set filetype=css
 au BufNewFile,BufRead *.m set filetype=objc_enhanced
 au BufNewFile,BufRead *.mm set filetype=objc_enhanced
