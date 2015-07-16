@@ -117,7 +117,7 @@ export PATH=$PATH:/usr/lib/postgresql/8.4/bin:/opt/grails/bin:/opt/mongo/bin:/op
 export PATH=$PATH:/home/emmett/tools/storm-0.8.2/bin
 export PATH=$PATH:/opt/nodejs/bin
 export PATH=$PATH:/sbin
-export PATH=$PATH:/home/emmett/tools/apache-maven-3.2.1/bin
+export PATH=$PATH:/opt/apache-maven-3.3.3/bin
 export PATH=$PATH:/home/emmett/opt/bin:/opt/bin
 export PATH=$PATH:~/opt/bin
 export PATH=$PATH:/opt/llvm/build/Release+Asserts/bin
@@ -126,7 +126,7 @@ export PATH=$PATH:/opt/python-3.4.3/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/home/emmett/anaconda3/lib
 
 export JAVA_HOME="/usr/lib/jvm/default-java/"
-export M2_HOME="/home/emmett/tools/apache-maven-3.2.1"
+export M2_HOME="/opt/apache-maven-3.3.3"
 
 $PS1="\[\033[G\]$PS1"
 
