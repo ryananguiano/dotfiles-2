@@ -104,7 +104,6 @@ alias hist="history | grep"
 alias clj="java -cp /usr/local/bin/clojure-1.6.0/clojure-1.6.0.jar clojure.main"
 
 alias xrestart="sudo /etc/init.d/gdm restart"
-alias Mxmlc='mxmlc -static-link-runtime-shared-libraries=true'
 alias hay='find . -name'
 alias fanstat='sudo cat /proc/acpi/ibm/fan'
 
