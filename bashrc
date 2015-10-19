@@ -119,8 +119,10 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/opt/apache-maven-3.3.3/bin
 export PATH=$PATH:/home/emmett/opt/bin:/opt/bin
 export PATH=$PATH:~/opt/bin
+export PATH=$PATH:/usr/share/elasticsearch/bin
 export PATH=$PATH:/opt/llvm/build/Release+Asserts/bin
 export PATH=$PATH:/opt/python-3.4.3/bin
+export PATH=$PATH:/opt/python-3.5.0/bin
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib:/home/emmett/anaconda3/lib
 
