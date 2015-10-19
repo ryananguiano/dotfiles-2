@@ -58,7 +58,7 @@ set gdefault                       " assume the /g flag on :s substitutions
 set hlsearch                       " highlight search items
 
 set wrap linebreak textwidth=9999  " set vim to soft wrap lines
-set colorcolumn=80
+set colorcolumn=90
 set formatoptions=qrn1
 set autoindent
 set shiftround
