@@ -1,0 +1,15 @@
+#!/bin/bash
+
+startkafka() {
+    tmux new-window
+    tmux send-keys /opt/kafka-0.8.2.1/bin/zookeeper-server-start.sh Space /opt/kafka-0.8.2.1/config/zookeeper.properties C-m
+    tmux split-window -h
+    tmux send-keys /opt/kafka-0.8.2.1/bin/kafka-server-start.sh Space /opt/kafka-0.8.2.1/config/server.properties C-m
+    tmux split-window -h
+    tmux send-keys /opt/kafka-0.8.2.1/bin/kafka-server-start.sh Space /opt/kafka-0.8.2.1/config/server1.properties C-m
+    tmux split-window -h
+    tmux send-keys /opt/kafka-0.8.2.1/bin/kafka-server-start.sh Space /opt/kafka-0.8.2.1/config/server2.properties C-m
+    tmux select-layout main-vertical > /dev/null
+}
+
+startkafka
