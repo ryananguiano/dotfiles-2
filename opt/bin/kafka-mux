@@ -3,6 +3,9 @@
 startkafka() {
     tmux new-window
     tmux send-keys /opt/kafka-0.8.2.1/bin/zookeeper-server-start.sh Space /opt/kafka-0.8.2.1/config/zookeeper.properties C-m
+
+    sleep 3
+
     tmux split-window -h
     tmux send-keys /opt/kafka-0.8.2.1/bin/kafka-server-start.sh Space /opt/kafka-0.8.2.1/config/server.properties C-m
     tmux split-window -h
@@ -10,6 +13,11 @@ startkafka() {
     tmux split-window -h
     tmux send-keys /opt/kafka-0.8.2.1/bin/kafka-server-start.sh Space /opt/kafka-0.8.2.1/config/server2.properties C-m
     tmux select-layout main-vertical > /dev/null
+
+    sleep 3
+
+    tmux new-window "/opt/kafka-0.8.2.1/bin/kafka-topics.sh --create --zookeeper localhost:2181 --topic testtopic_replicated --replication-factor 2 --partitions 10"
+    tmux close-window
 }
 
 startkafka
