@@ -5,6 +5,14 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+   platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+   platform='mac'
+fi
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
@@ -107,7 +115,11 @@ alias xrestart="sudo /etc/init.d/gdm restart"
 alias hay='find . -name'
 alias fanstat='sudo cat /proc/acpi/ibm/fan'
 
-export WORKON_HOME="/home/emmett/virtualenvs"
+if [[ $platform == 'linux' ]]; then
+    export WORKON_HOME="/home/emmett/virtualenvs"
+elif [[ $platform == 'mac' ]]; then
+    export WORKON_HOME="/Users/emmettbutler/virtualenvs"
+fi
 export GRAILS_HOME="/opt/grails"
 export PYTHONSTARTUP="~/.pythonstartup"
 
